@@ -54,7 +54,7 @@ rec_scale <- function(x){
 
 d <- d %>% 
  mutate_at(vars(medical, spoof, violence, adult, racy), 
-           list( fct = rec_scale,
+           list(fct = rec_scale,
                  d = ~ifelse(. %in% c("UNLIKELY", "VERY_UNLIKELY"), 0, 1),
                  d2 = ~ifelse(. %in% c("VERY_UNLIKELY"), 0, 1)
                  )
